@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Schedules - WasteCare</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            ♻️
+            <span>WasteCare</span>
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="zones.html">
+                📍 Zones
+            </a>
+
+            <a href="schedules.html" class="active">
+                📅 Schedules
+            </a>
+
+            <a href="pickups.html">
+                🚛 Pickups
+            </a>
+
+            <a href="reports.html">
+                📊 Reports
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Smart Waste Management</p>
+            <small>Clean • Green • Smart</small>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Collection Schedules</h1>
+                <p>Manage waste collection schedules for each zone.</p>
+            </div>
+
+            <div class="profile">
+                👤 Admin
+            </div>
+
+        </header>
+
+
+        <!-- ADD SCHEDULE -->
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Add Collection Schedule</h2>
+                    <p>Create a new waste pickup schedule.</p>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <select id="scheduleZone">
+                    <option value="">Select Zone</option>
+                </select>
+
+                <select id="scheduleDay">
+                    <option value="">Select Day</option>
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                </select>
+
+                <input type="time" id="startTime">
+
+                <input type="time" id="endTime">
+
+                <button onclick="addSchedule()">
+                    ➕ Add Schedule
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCHEDULE LIST -->
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>All Schedules</h2>
+                    <p>Current waste collection timings.</p>
+                </div>
+
+                <button onclick="loadSchedules()">
+                    🔄 Refresh
+                </button>
+
+            </div>
+
+
+            <div id="scheduleContainer">
+
+                <p>Loading schedules...</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        loadScheduleZones();
+
+        loadSchedules();
+
+    });
+
+</script>
+
+</body>
+</html>

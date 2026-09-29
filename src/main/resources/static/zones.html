@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zones - WasteCare</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            ♻️
+            <span>WasteCare</span>
+        </div>
+
+        <nav>
+            <a href="index.html">🏠 Dashboard</a>
+            <a href="zones.html" class="active">📍 Zones</a>
+            <a href="schedules.html">📅 Schedules</a>
+            <a href="pickups.html">🚛 Pickups</a>
+            <a href="reports.html">📊 Reports</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Smart Waste Management</p>
+            <small>Clean • Green • Smart</small>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <h1>Waste Collection Zones</h1>
+                <p>Manage and monitor waste collection zones.</p>
+            </div>
+
+            <div class="profile">
+                👤 Admin
+            </div>
+
+        </header>
+
+
+        <!-- ADD ZONE -->
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>➕ Add New Zone</h2>
+                    <p>Create a new waste collection zone.</p>
+                </div>
+
+            </div>
+
+            <div class="zone-form-row">
+
+                <input
+                    type="text"
+                    id="zoneName"
+                    placeholder="Enter zone name"
+                >
+
+                <input
+                    type="text"
+                    id="zoneLocation"
+                    placeholder="Enter location"
+                >
+
+                <button onclick="addZone()">
+                    ➕ Add Zone
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ZONE LIST -->
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>📍 All Collection Zones</h2>
+                    <p>Currently registered waste collection areas.</p>
+                </div>
+
+                <button onclick="loadZones()">
+                    🔄 Refresh
+                </button>
+
+            </div>
+
+
+            <div id="zoneCount" class="zone-count">
+                0 Zones
+            </div>
+
+
+            <div id="zoneContainer" class="zone-grid">
+
+                <div class="empty">
+                    <h3>Loading zones...</h3>
+                    <p>Please wait.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+<script>
+    loadZones();
+</script>
+
+</body>
+</html>

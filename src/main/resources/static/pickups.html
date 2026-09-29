@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pickups - WasteCare</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            ♻️
+            <span>WasteCare</span>
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="zones.html">
+                📍 Zones
+            </a>
+
+            <a href="schedules.html">
+                📅 Schedules
+            </a>
+
+            <a href="pickups.html" class="active">
+                🚛 Pickups
+            </a>
+
+            <a href="reports.html">
+                📊 Reports
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Smart Waste Management</p>
+            <small>Clean • Green • Smart</small>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <h1>Waste Pickups</h1>
+                <p>Monitor and manage today's waste collection activities.</p>
+            </div>
+
+            <div class="profile">
+                👤 Admin
+            </div>
+
+        </header>
+
+
+        <!-- STAT CARDS -->
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    🚛
+                </div>
+
+                <div>
+                    <h3 id="totalPickups">28</h3>
+                    <p>Total Pickups</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ✓
+                </div>
+
+                <div>
+                    <h3 id="completedPickups">18</h3>
+                    <p>Completed</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ⏳
+                </div>
+
+                <div>
+                    <h3 id="pendingPickups">7</h3>
+                    <p>Pending</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    ⚖️
+                </div>
+
+                <div>
+                    <h3>156 kg</h3>
+                    <p>Waste Collected</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PICKUP MANAGEMENT -->
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Today's Pickups</h2>
+                    <p>Waste collection activities by zone.</p>
+                </div>
+
+                <button onclick="refreshPickups()">
+                    🔄 Refresh
+                </button>
+
+            </div>
+
+
+            <!-- PICKUP LIST -->
+            <div id="pickupContainer">
+
+
+                <!-- PICKUP 1 -->
+                <div class="pickup-card">
+
+                    <div class="pickup-icon">
+                        🚛
+                    </div>
+
+                    <div class="pickup-details">
+
+                        <h3>Zone A</h3>
+
+                        <p>
+                            📍 Main Street
+                        </p>
+
+                        <p>
+                            🕘 08:00 AM - 10:00 AM
+                        </p>
+
+                    </div>
+
+                    <div class="waste-type">
+                        <span>♻️ Organic</span>
+                    </div>
+
+                    <div class="pickup-status completed">
+                        Completed
+                    </div>
+
+                </div>
+
+
+                <!-- PICKUP 2 -->
+                <div class="pickup-card">
+
+                    <div class="pickup-icon">
+                        🚛
+                    </div>
+
+                    <div class="pickup-details">
+
+                        <h3>Zone B</h3>
+
+                        <p>
+                            📍 Gandhi Nagar
+                        </p>
+
+                        <p>
+                            🕘 10:00 AM - 12:00 PM
+                        </p>
+
+                    </div>
+
+                    <div class="waste-type">
+                        <span>♻️ Recyclable</span>
+                    </div>
+
+                    <div class="pickup-status pending">
+                        Pending
+                    </div>
+
+                </div>
+
+
+                <!-- PICKUP 3 -->
+                <div class="pickup-card">
+
+                    <div class="pickup-icon">
+                        🚛
+                    </div>
+
+                    <div class="pickup-details">
+
+                        <h3>Zone C</h3>
+
+                        <p>
+                            📍 Railway Road
+                        </p>
+
+                        <p>
+                            🕘 12:00 PM - 02:00 PM
+                        </p>
+
+                    </div>
+
+                    <div class="waste-type">
+                        <span>🗑️ General</span>
+                    </div>
+
+                    <div class="pickup-status completed">
+                        Completed
+                    </div>
+
+                </div>
+
+
+                <!-- PICKUP 4 -->
+                <div class="pickup-card">
+
+                    <div class="pickup-icon">
+                        🚛
+                    </div>
+
+                    <div class="pickup-details">
+
+                        <h3>Zone D</h3>
+
+                        <p>
+                            📍 Market Area
+                        </p>
+
+                        <p>
+                            🕘 02:00 PM - 04:00 PM
+                        </p>
+
+                    </div>
+
+                    <div class="waste-type">
+                        <span>⚠️ Hazardous</span>
+                    </div>
+
+                    <div class="pickup-status pending">
+                        Pending
+                    </div>
+
+                </div>
+
+
+                <!-- PICKUP 5 -->
+                <div class="pickup-card">
+
+                    <div class="pickup-icon">
+                        🚛
+                    </div>
+
+                    <div class="pickup-details">
+
+                        <h3>Zone E</h3>
+
+                        <p>
+                            📍 Bus Stand Road
+                        </p>
+
+                        <p>
+                            🕘 04:00 PM - 06:00 PM
+                        </p>
+
+                    </div>
+
+                    <div class="waste-type">
+                        <span>♻️ Recyclable</span>
+                    </div>
+
+                    <div class="pickup-status pending">
+                        Pending
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COLLECTION SUMMARY -->
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Collection Summary</h2>
+                    <p>Waste collected by category.</p>
+                </div>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <!-- ORGANIC -->
+                <div class="progress-row">
+                    <span>🌱 Organic Waste</span>
+                    <strong>72%</strong>
+                </div>
+
+                <div class="progress">
+                    <div
+                        class="progress-bar organic"
+                        style="width:72%">
+                    </div>
+                </div>
+
+
+                <!-- RECYCLABLE -->
+                <div class="progress-row">
+                    <span>♻️ Recyclable Waste</span>
+                    <strong>58%</strong>
+                </div>
+
+                <div class="progress">
+                    <div
+                        class="progress-bar recyclable"
+                        style="width:58%">
+                    </div>
+                </div>
+
+
+                <!-- HAZARDOUS -->
+                <div class="progress-row">
+                    <span>⚠️ Hazardous Waste</span>
+                    <strong>34%</strong>
+                </div>
+
+                <div class="progress">
+                    <div
+                        class="progress-bar hazardous"
+                        style="width:34%">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- PICKUP PAGE SCRIPT -->
+<script>
+
+function refreshPickups() {
+
+    const button = document.querySelector(".panel-header button");
+
+    button.innerText = "Refreshing...";
+
+    setTimeout(function () {
+
+        button.innerText = "Updated ✓";
+
+        setTimeout(function () {
+
+            button.innerText = "🔄 Refresh";
+
+        }, 1500);
+
+    }, 700);
+
+}
+
+</script>
+
+</body>
+</html>

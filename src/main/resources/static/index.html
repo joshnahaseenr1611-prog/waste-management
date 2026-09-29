@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Waste Management Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            ♻️
+            <span>WasteCare</span>
+        </div>
+
+        <nav>
+
+            <a href="index.html" class="active">
+                🏠 Dashboard
+            </a>
+
+            <a href="zones.html">
+                📍 Zones
+            </a>
+
+            <a href="schedules.html">
+                📅 Schedules
+            </a>
+
+            <a href="pickups.html">
+                🚛 Pickups
+            </a>
+
+            <a href="reports.html">
+                📊 Reports
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Smart Waste Management</p>
+            <small>Clean • Green • Smart</small>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <h1>Waste Management Dashboard</h1>
+                <p>Monitor and manage waste collection efficiently.</p>
+            </div>
+
+            <div class="profile">
+                👤 Admin
+            </div>
+
+        </header>
+
+
+        <!-- STAT CARDS -->
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ♻️
+                </div>
+
+                <div>
+                    <h3 id="dashboardZoneCount">12</h3>
+                    <p>Total Zones</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    🚛
+                </div>
+
+                <div>
+                    <h3>28</h3>
+                    <p>Today's Pickups</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    🗑️
+                </div>
+
+                <div>
+                    <h3>156 kg</h3>
+                    <p>Waste Collected</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    📊
+                </div>
+
+                <div>
+                    <h3>87%</h3>
+                    <p>Efficiency</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT GRID -->
+        <section class="content-grid">
+
+
+            <!-- LEFT SECTION -->
+            <div class="left-section">
+
+
+                <!-- COLLECTION OVERVIEW -->
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Collection Overview</h2>
+                            <p>Today's waste collection status</p>
+                        </div>
+
+                        <button onclick="refreshDashboard()">
+                            Refresh
+                        </button>
+
+                    </div>
+
+
+                    <div class="progress-container">
+
+
+                        <div class="progress-row">
+                            <span>Organic Waste</span>
+                            <strong>72%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-bar organic"
+                                style="width:72%">
+                            </div>
+                        </div>
+
+
+                        <div class="progress-row">
+                            <span>Recyclable Waste</span>
+                            <strong>58%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-bar recyclable"
+                                style="width:58%">
+                            </div>
+                        </div>
+
+
+                        <div class="progress-row">
+                            <span>Hazardous Waste</span>
+                            <strong>34%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-bar hazardous"
+                                style="width:34%">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT PICKUPS -->
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Recent Pickups</h2>
+                            <p>Latest waste collection activities</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pickup-list">
+
+
+                        <div class="pickup">
+
+                            <div class="pickup-icon">
+                                🚛
+                            </div>
+
+                            <div>
+                                <strong>Zone A</strong>
+                                <p>Organic waste collected</p>
+                            </div>
+
+                            <span class="completed">
+                                Completed
+                            </span>
+
+                        </div>
+
+
+                        <div class="pickup">
+
+                            <div class="pickup-icon">
+                                🚛
+                            </div>
+
+                            <div>
+                                <strong>Zone B</strong>
+                                <p>Recyclable waste collection</p>
+                            </div>
+
+                            <span class="pending">
+                                Pending
+                            </span>
+
+                        </div>
+
+
+                        <div class="pickup">
+
+                            <div class="pickup-icon">
+                                🚛
+                            </div>
+
+                            <div>
+                                <strong>Zone C</strong>
+                                <p>General waste collection</p>
+                            </div>
+
+                            <span class="completed">
+                                Completed
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WASTE SEGREGATION -->
+            <div class="segregation-card">
+
+
+                <div class="segregation-header">
+
+                    <span>♻️</span>
+
+                    <div>
+                        <h2>Waste Segregation</h2>
+                        <p>Smart waste classification</p>
+                    </div>
+
+                </div>
+
+
+                <div class="animation-area">
+
+
+                    <!-- FLOATING WASTE -->
+
+                    <div class="waste-item item1">
+                        🍎
+                    </div>
+
+                    <div class="waste-item item2">
+                        🧴
+                    </div>
+
+                    <div class="waste-item item3">
+                        🔋
+                    </div>
+
+                    <div class="waste-item item4">
+                        📦
+                    </div>
+
+
+                    <div class="sorting-arrow">
+                        ↓
+                    </div>
+
+
+                    <!-- BINS -->
+
+                    <div class="bins">
+
+
+                        <div class="bin organic-bin">
+
+                            <div class="bin-lid"></div>
+
+                            <div class="bin-body">
+                                🥬
+                            </div>
+
+                            <strong>
+                                Organic
+                            </strong>
+
+                            <small>
+                                Food & Plants
+                            </small>
+
+                        </div>
+
+
+                        <div class="bin recycle-bin">
+
+                            <div class="bin-lid"></div>
+
+                            <div class="bin-body">
+                                ♻️
+                            </div>
+
+                            <strong>
+                                Recyclable
+                            </strong>
+
+                            <small>
+                                Plastic & Paper
+                            </small>
+
+                        </div>
+
+
+                        <div class="bin hazardous-bin">
+
+                            <div class="bin-lid"></div>
+
+                            <div class="bin-body">
+                                ⚠️
+                            </div>
+
+                            <strong>
+                                Hazardous
+                            </strong>
+
+                            <small>
+                                Batteries & Chemicals
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="segregation-status">
+
+
+                    <div>
+                        <span class="dot green-dot"></span>
+                        Organic
+                    </div>
+
+
+                    <div>
+                        <span class="dot blue-dot"></span>
+                        Recyclable
+                    </div>
+
+
+                    <div>
+                        <span class="dot red-dot"></span>
+                        Hazardous
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+
+
+</body>
+</html>
